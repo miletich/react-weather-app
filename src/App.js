@@ -10,18 +10,5 @@ const App = ({children}) => {
     </div>
   )
 }
-/*
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Navigation />
-        <h1>Main Component</h1>
-        {this.props.children}
-      </div>
-    )
-  }
-}
-*/
 
 export default App;

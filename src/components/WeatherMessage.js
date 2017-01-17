@@ -4,7 +4,7 @@ class WeatherMessage extends Component {
   render() {
     return (
       <div>
-        <h3>It's -5°C in Belgrade.</h3>
+        <h3>It's {this.props.temp} in {this.props.location}.</h3>
       </div>
     );
   }
