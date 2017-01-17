@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 
 class Navigation extends Component {
   render() {
     return (
       <div>
         <h1>Navigation</h1>
-        <Link to="/">Get Weather</Link>
-        <Link to="/about">About</Link>
-        <Link to="/examples">Examples</Link>
+        <IndexLink to="/" activeClassName="active" activeStyle={{ color: 'red' }}>Get Weather</IndexLink>
+        <Link to="/about" activeClassName="active" activeStyle={{ color: 'red' }}>About</Link>
+        <Link to="/examples" activeClassName="active" activeStyle={{ color: 'red' }}>Examples</Link>
       </div>
     );
   }
