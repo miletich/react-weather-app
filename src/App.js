@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 const App = ({children}) => {
   return (
-    <div>
-      <Navigation />
-      <h1>Main Component</h1>
-      {children}
-    </div>
-  )
+    <Grid fluid>
+      <Row>
+        <Col>
+          <Navigation />
+        </Col>
+      </Row>
+      <Row>
+        <Col md={6} lg={4} style={{float: 'none', margin: 'auto', textAlign: 'center'}}>
+          {children}
+        </Col>
+      </Row>
+    </Grid>
+  );
 }
 
 export default App;
