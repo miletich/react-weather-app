@@ -1,6 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Examples = () =>
-  <h3>Examples</h3>
+  <div>
+    <h1>Examples</h1>
+    <p>Here are a few example locations to try out</p>
+    <ol style={{listStylePosition: 'inside', paddingLeft: '0'}}>
+      <li>
+        <Link to='/?location=Belgrade'>Belgrade</Link>
+      </li>
+      <li>
+        <Link to='/?location=Smederevo'>Smederevo</Link>
+      </li>
+    </ol>
+  </div>
 
 export default Examples;
