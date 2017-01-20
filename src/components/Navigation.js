@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { LinkContainer, IndexLinkContainer } from 'react-router-bootstrap';
 import { Navbar, NavItem, Nav, FormGroup, FormControl, Button } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
 
 class Navigation extends Component {
   constructor(props) {
@@ -10,7 +11,13 @@ class Navigation extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    alert('hello');
+    const location = ReactDOM.findDOMNode(this.location).value;
+    const encodedLocation = encodeURIComponent(location);
+
+    if (location.length > 0) {
+      ReactDOM.findDOMNode(this.location).value ='';
+      window.location.hash = '#/?location=' + encodedLocation;
+    }
   }
 
   render() {
@@ -37,7 +44,9 @@ class Navigation extends Component {
           <Navbar.Form pullRight>
             <form onSubmit={this.onSubmit}>
               <FormGroup>
-                <FormControl type="search" placeholder="Search..."/>
+                <FormControl type="search"
+                  ref={(c) => this.location=c}
+                  placeholder="Search..."/>
               </FormGroup>
               {'  '}
               <Button bsStyle="primary" type="submit">Get Weather</Button>
