@@ -5,7 +5,7 @@ import App from './App';
 import Weather from './components/Weather';
 import About from './components/About';
 import Examples from './components/Examples';
-import './index.css';
+import './index.scss';
 
 ReactDOM.render(
   <Router history={hashHistory}>
