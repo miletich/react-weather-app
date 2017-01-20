@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button, FormGroup, FormControl } from 'react-bootstrap';
+import ReactDOM from 'react-dom';
 
 class WeatherForm extends Component {
   constructor(props) {
@@ -9,10 +11,10 @@ class WeatherForm extends Component {
   onFormSubmit(e){
     e.preventDefault();
 
-    const location = this.refs.location.value;
+    const location = ReactDOM.findDOMNode(this.location).value;
 
     if (location.length > 0) {
-      this.refs.location.value = '';
+      ReactDOM.findDOMNode(this.location).value = '';
       this.props.onSearch(location);
     }
   }
@@ -20,8 +22,19 @@ class WeatherForm extends Component {
   render() {
     return (
       <form onSubmit={this.onFormSubmit}>
-        <input type="text" ref="location"/>
-        <button type="submit">Submit</button>
+        <FormGroup>
+          <FormControl type="text"
+            bsSize="large"
+            ref={(c) => this.location=c}/>
+        </FormGroup>
+        <FormGroup>
+          <Button type="submit"
+            bsSize="large"
+            bsStyle="primary"
+            block>
+            Submit
+          </Button>
+        </FormGroup>
       </form>
     );
   }
