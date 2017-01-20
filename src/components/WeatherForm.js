@@ -23,7 +23,8 @@ class WeatherForm extends Component {
     return (
       <form onSubmit={this.onFormSubmit}>
         <FormGroup>
-          <FormControl type="text"
+          <FormControl type="search"
+            placeholder="Search weather by city"
             bsSize="large"
             ref={(c) => this.location=c}/>
         </FormGroup>

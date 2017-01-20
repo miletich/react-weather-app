@@ -54,7 +54,7 @@ class Weather extends Component {
 
     return (
       <div>
-        <h1>Get Weather</h1>
+        <h1 className='page-title'>Get Weather</h1>
         <WeatherForm onSearch={this.handleSearch}/>
         {renderMessage()}
         {renderModal()}

@@ -37,7 +37,7 @@ class Navigation extends Component {
           <Navbar.Form pullRight>
             <form onSubmit={this.onSubmit}>
               <FormGroup>
-                <FormControl type="text" placeholder="Search..."/>
+                <FormControl type="search" placeholder="Search..."/>
               </FormGroup>
               {'  '}
               <Button bsStyle="primary" type="submit">Get Weather</Button>
