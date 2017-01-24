@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WeatherForm from './WeatherForm'
 import WeatherMessage from './WeatherMessage';
-import openWeatherMap from './../../api/openWeatherMap';
+import apixu from './../../api/apixu';
 import ErrorModal from './ErrorModal';
 
 class Weather extends Component {
@@ -23,7 +23,7 @@ class Weather extends Component {
       temp: undefined,
     });
 
-    openWeatherMap.getTemp(location).then(function (temp) {
+    apixu.getTemp(location).then(function (temp) {
       that.setState({
         location: location,
         temp: temp,
