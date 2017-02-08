@@ -1,8 +1,9 @@
-$space-large: 3.5rem;
+$space-large: 14rem;
+$space-regular: 8rem;
 $title-color: #555;
 
 .page-title {
   margin-top: $space-large;
-  margin-bottom: $space-large;
+  margin-bottom: $space-regular;
   color: $title-color;
 }
