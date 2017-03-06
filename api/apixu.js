@@ -8,7 +8,6 @@ module.exports = {
     var requestUrl = APIXU_URL + '&q=' + encodedLocation;
 
     return axios.get(requestUrl).then(function (res) {
-      console.log(res);;
       if (res.data.error) {
         throw new Error(res.data.error.message);
       } else {
